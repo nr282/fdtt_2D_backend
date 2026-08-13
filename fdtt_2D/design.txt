@@ -1,0 +1,50 @@
+A key goal of the disaggregation software is to accomplish the following:
+    1. depixelation
+    2. decompression
+    3. disaggregation of a 2D domain
+
+
+These techniques can be applied to:
+    1. Partial Differential Equations
+    2. Images
+        1. De-pixelation
+        2. Decompression
+        3. Disaggregation
+
+
+A test bed must be created.
+
+                                    High Resolution Image (How much memory? What is size of grid?)
+                                            |
+                                            |
+                                            |
+                                            v
+                                    Reduced Resolution Image (How much memory? What is size of grid?)
+                                            |
+                                            |
+                                            |
+                                            v
+                                      Introduce Grid (Grid will have reduced size)
+                                            |
+                                            |
+                                            |
+                                            v
+                                     Solve for 2D Interpolant
+                                            |
+                                            |
+                                            |
+                                            v
+                                     Create New, Fine Grid
+                                            |
+                                            |
+                                            |
+                                            v
+                                     Compare New Fine Grid
+                                     Against Original Grid
+                                            |
+                                            |
+                                            |
+                                            v
+                                    Consider Accuracy.
+
+
