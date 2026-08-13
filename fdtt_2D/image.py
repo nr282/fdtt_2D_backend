@@ -94,14 +94,8 @@ def depixelation(img: Image):
     sub_image = Image("pixelated_sub_image", image=sub_image)
     new_img = engine.depixelate(sub_image)
 
-def depixelation_with_boundary_correction():
-    name = "pixelated_google_meet_image_of_colin"
-    img = Image(name,
-                "pixelated_image.png")
+def depixelation_with_boundary_correction(sub_image: np.ndarray):
 
-    # = img.get_sub_image(50, 50, 3, 3)
-
-    sub_image = img.cv2_image[:10, :10]
     channel_0 = sub_image[:,:,0]
     channel_1 = sub_image[:,:,1]
     channel_2 = sub_image[:,:,2]

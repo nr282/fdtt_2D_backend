@@ -4,26 +4,44 @@ Variational Framework for 2D.
 
 """
 
+import numpy as np
 import signal
 import sys
 from types import FrameType
-
-from flask import Flask
-
+from flask import Flask,request,jsonify
 from utils.logging import logger
+from fdtt_2D.image import depixelation_with_boundary_correction
 
 app = Flask(__name__)
 
 
 @app.route("/")
-def hello() -> str:
+def calculate_depixelation() -> np.ndarray:
+    """
+    Calculates Dexpixelation of a sub_image in string form
+    with the number of rows and columns specified by
+    m, n and channels.
+
+    :return:
+    """
+
+    values = request.args.get('sub_image')
+    m = request.args.get('m')
+    n = request.args.get('n')
+    channels = request.args.get('channels')
+
+
+    flat_arr = np.fromstring(values, sep=" ", dtype=int)
+    arr_3d = flat_arr.reshape((m, n, channels))
+
     # Use basic logging with custom fields
     logger.info(logField="custom-entry", arbitraryField="custom-entry")
 
     # https://cloud.google.com/run/docs/logging#correlate-logs
     logger.info("Child logger with trace Id.")
 
-    return "Hello, World!"
+    result = depixelation_with_boundary_correction(arr_3d)
+    return result
 
 
 def shutdown_handler(signal_int: int, frame: FrameType) -> None:
