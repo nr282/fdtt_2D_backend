@@ -2,7 +2,7 @@ from typing import Callable, List, Any
 import numpy as np
 import math
 from numpy import ndarray, dtype, float64
-from verification import manual_d2f_dy2, manual_d2f_dx2
+from .verification import manual_d2f_dy2, manual_d2f_dx2
 from functools import cache
 import os
 
