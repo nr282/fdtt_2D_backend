@@ -12,9 +12,9 @@ import cv2
 import os
 import numpy as np
 from scipy.integrate import dblquad
-from calculus_of_variations_solver import create_two_dimensional_function
-from variational_framework_2D import calculate_laplace_solution, calculate_modified_grid, calculate_laplace_and_grid
-from verification import verification_of_laplacian
+from .calculus_of_variations_solver import create_two_dimensional_function
+from .variational_framework_2D import calculate_laplace_solution, calculate_modified_grid, calculate_laplace_and_grid
+from .verification import verification_of_laplacian
 
 
 def divide_set(num_dim, i, total_set):

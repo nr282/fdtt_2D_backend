@@ -109,9 +109,9 @@ from scipy.integrate import quad, dblquad
 import matplotlib.pyplot as plt
 import numpy as np
 import logging
-from calculus_of_variations_solver import create_two_dimensional_function
+from .calculus_of_variations_solver import create_two_dimensional_function
 from enum import Enum
-from verification import manual_d2f_dy2, manual_d2f_dx2, verification_of_laplacian
+from .verification import manual_d2f_dy2, manual_d2f_dx2, verification_of_laplacian
 
 logging.basicConfig(level=logging.DEBUG)
 
