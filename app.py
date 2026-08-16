@@ -48,6 +48,8 @@ def calculate_depixelation() -> np.ndarray:
 
     arr_3d = flat_arr.reshape((m, n, channels))
 
+    print("3D array: ", arr_3d)
+
     # Use basic logging with custom fields
     logger.info(logField="custom-entry", arbitraryField="custom-entry")
 
