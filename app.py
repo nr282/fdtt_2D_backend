@@ -31,7 +31,9 @@ def calculate_depixelation() -> np.ndarray:
     channels = request.args.get('channels')
 
     print("Logging...")
+    print("\n")
     print("Values: ", values)
+    print("\n")
     print("M: ", m)
     print("N: ", n)
 
@@ -39,7 +41,7 @@ def calculate_depixelation() -> np.ndarray:
     n = int(n)
     channels = int(channels)
 
-    flat_arr = np.fromstring(values, sep=",", dtype=int)
+    flat_arr = np.array(values.split(","))
 
     print("Flat array: ", flat_arr)
     print("Flat array shape: ", flat_arr.shape)
