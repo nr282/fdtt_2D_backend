@@ -40,6 +40,10 @@ def calculate_depixelation() -> np.ndarray:
     channels = int(channels)
 
     flat_arr = np.fromstring(values, sep=" ", dtype=int)
+
+    print("Flat array: ", flat_arr)
+    print("Flat array shape: ", flat_arr.shape)
+
     arr_3d = flat_arr.reshape((m, n, channels))
 
     # Use basic logging with custom fields
