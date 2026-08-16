@@ -26,6 +26,7 @@ def calculate_depixelation() -> np.ndarray:
     """
 
     values = request.args.get('sub_image')
+    values = map(lambda x: int(x), values)
     m = request.args.get('m')
     n = request.args.get('n')
     channels = request.args.get('channels')
