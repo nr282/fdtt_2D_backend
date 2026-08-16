@@ -35,6 +35,9 @@ def calculate_depixelation() -> np.ndarray:
     print("M: ", m)
     print("N: ", n)
 
+    m = int(m)
+    n = int(n)
+    channels = int(channels)
 
     flat_arr = np.fromstring(values, sep=" ", dtype=int)
     arr_3d = flat_arr.reshape((m, n, channels))
