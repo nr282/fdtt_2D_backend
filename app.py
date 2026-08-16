@@ -30,6 +30,11 @@ def calculate_depixelation() -> np.ndarray:
     n = request.args.get('n')
     channels = request.args.get('channels')
 
+    print("Logging...")
+    print("Values: ", values)
+    print("M: ", m)
+    print("N: ", n)
+
 
     flat_arr = np.fromstring(values, sep=" ", dtype=int)
     arr_3d = flat_arr.reshape((m, n, channels))
