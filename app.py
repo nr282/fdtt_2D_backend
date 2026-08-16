@@ -41,7 +41,7 @@ def calculate_depixelation() -> np.ndarray:
     m = int(m)
     n = int(n)
     channels = int(channels)
-    values = map(lambda x: float(x), values.split(","))
+    values = list(map(lambda x: float(x), values.split(",")))
     flat_arr = np.array(values)
 
 
